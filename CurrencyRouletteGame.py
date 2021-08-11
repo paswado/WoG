@@ -1,6 +1,9 @@
 # Using: https://pypi.org/project/CurrencyConverter/
+
 from currency_converter import CurrencyConverter
 from random import randrange
+
+import score
 
 def get_money_interval(usd_value, difficulty):
     c = CurrencyConverter()
@@ -23,8 +26,10 @@ def play(difficulty):
 
     if ils_value_guess >= ils_value_range[0] and ils_value_guess <= ils_value_range[1]:
         print("Your guess is correct! You win!")
+        return True
     else:
         print("Meh, loser")
+        return False
 
 
 

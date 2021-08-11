@@ -2,6 +2,8 @@ import GuessGame
 import MemoryGame
 import CurrencyRouletteGame
 
+import score
+
 #Please choose a game to play:
 #1. Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back
 #2. Guess Game - guess a number and see if you chose like the computer
@@ -21,12 +23,14 @@ def load_game():
     
     difficulty = int(input("Please choose game difficulty (1 to 5): "))
 
-
     if game == 1:
-        GuessGame.play(difficulty)
+        win = GuessGame.play(difficulty)
     elif game == 2:
-        MemoryGame.play(difficulty)
+        win = MemoryGame.play(difficulty)
     elif game == 3:
-        CurrencyRouletteGame.play(difficulty)
+        win = CurrencyRouletteGame.play(difficulty)
     else:
         print("Unknown game: {}".format(game))
+
+    if win == True:
+        score.add_score()

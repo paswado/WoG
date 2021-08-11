@@ -56,8 +56,10 @@ def play(difficulty):
 
     if list_is_equal(random_numbers, user_numbers):
         print("You win!")
+        return True
     else:
         print("You lose!")
+        return False
 
 
 if __name__ == '__main__':
