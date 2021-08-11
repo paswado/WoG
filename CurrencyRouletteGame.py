@@ -3,8 +3,6 @@
 from currency_converter import CurrencyConverter
 from random import randrange
 
-import score
-
 def get_money_interval(usd_value, difficulty):
     c = CurrencyConverter()
 

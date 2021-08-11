@@ -1,6 +1,7 @@
 import os.path
+import Util
 
-def add_score(filename='score.txt'):
+def add_score(difficulty, filename='score.txt'):
     if not os.path.isfile(filename):
         with open(filename, 'a') as temp:
             temp.close()
@@ -13,10 +14,21 @@ def add_score(filename='score.txt'):
         else:
             int_score = int(score)
 
+
         fp.seek(0)
 
-        fp.write(str(int_score + 1))
+        fp.write(str(int_score + ((difficulty*3) + 1)))
+
+
+def get_score(filename):
+    with open(filename, 'r') as fp:
+        try:
+            return int(fp.read())
+        except ValueError:
+            return None
+
+
 
 
 if __name__ == '__main__':
-    add_score('test.txt')
+    add_score(3, 'test.txt')

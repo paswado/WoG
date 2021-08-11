@@ -2,7 +2,7 @@ import GuessGame
 import MemoryGame
 import CurrencyRouletteGame
 
-import score
+import Score
 
 #Please choose a game to play:
 #1. Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back
@@ -33,4 +33,4 @@ def load_game():
         print("Unknown game: {}".format(game))
 
     if win == True:
-        score.add_score()
+        Score.add_score(difficulty)
